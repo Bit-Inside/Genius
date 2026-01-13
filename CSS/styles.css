@@ -39,7 +39,9 @@
 }
 
 /* Base */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -61,6 +63,10 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+
+a {
+  display: inline-block;
 }
 
 address {
@@ -224,6 +230,18 @@ ul {
   border: 2px solid var(--color-brand-light-1);
   content: '';
 }
+.chefs-list {
+  display: flex;
+  gap: 40px 30px;
+  flex-wrap: wrap;
+}
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
 .chef-photo {
   border-radius: 4px 4px 4px 200px;
   box-shadow: -16px 16px 0 0 var(--color-primery-light),
@@ -234,7 +252,19 @@ ul {
   font-size: 40px;
   font-weight: 600;
 }
+.chef-text p {
+  margin-bottom: 24px;
+}
+.chef-text p:last-child {
+  margin-bottom: 0;
+}
+
 /* Formats section */
+.formats-container {
+  align-items: center;
+  display: flex;
+  gap: 32px;
+}
 .formats-list {
   display: flex;
   flex-wrap: wrap;
@@ -267,19 +297,79 @@ ul {
   font-weight: 300;
 }
 
+/* Carousel */
+.carousel-button {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  fill: var(--color-primery-dark);
+  border-radius: 50%;
+}
+
+.carousel-button:hover {
+  background-color: var(--color-primery-dark);
+  fill: var(--color-primery-light);
+}
+
 /* Contacts section */
+.contact-section {
+  padding-bottom: 96px;
+}
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
 .contact-title {
   margin-bottom: 16px;
 }
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
+
 /* Footer */
+.footer {
+  padding: 32px;
+}
+.footer-container {
+  gap: 20px;
+  display: flex;
+}
+.footer-nav,
+.footer-address {
+  gap: 20px;
+  flex-basis: 50%;
+  display: flex;
+}
+.footer-logo,
+.footer-menu {
+  flex-grow: 1;
+}
+.address-list,
+.address-info {
+  flex-grow: 1;
+}
 .address-link {
   color: var(--color-primery-light);
   font-size: 16px;
   font-weight: 300;
+  text-decoration: none;
 }
-
 .address-link:hover {
   color: var(--color-brand-light);
+}
+.address-icon {
+  fill: var(--color-primery-light);
+}
+.address-icon:hover {
+  fill: var(--color-brand-light);
 }
 .address-copyright {
   font-size: 14px;
